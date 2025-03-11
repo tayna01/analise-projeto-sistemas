@@ -14,9 +14,7 @@ O objetivo deste repositório é armazenar materiais, documentações, diagramas
 
 ## Estrutura do Repositório
 ```
-├── docs/       # Documentação e artefatos do projeto
-├── src/        # Códigos-fonte dos projetos desenvolvidos
-├── assets/     # Recursos visuais e diagramas
+├── aulas/      # Diretório onde ficará armazenados os arquivos referentes as notas de aula.
 |
 ├── README.md   # Documento principal do repositório
 ```
