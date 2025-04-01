@@ -2,7 +2,7 @@
     @data   01/04/2025
     @aula   04
 
-> #### Alto-avaliação: *.*
+> #### Alto-avaliação: *Dev Pleno*
 
 ---
 
@@ -20,7 +20,7 @@ Na primeira parte da aula, a dinâmica centralizou-se em uma espécie de worksho
 
 Em um segundo momento, ao contrário do que fez no início da aula, Edmar foi caminhando fileira por fileira, conversando e respondendo perguntas individualmente para cada equipe.
 
-Quando chegou nossa vez de entrevistá-lo, focamos em perguntar sobre ________________
+Quando chegou nossa vez de entrevistá-lo, focamos em perguntar sobre aspectos de segurança do empréstimo de materiais, como por exemplo
 
 #### Quais as dificuldades? Quais cuidados? Como contonar?
 
