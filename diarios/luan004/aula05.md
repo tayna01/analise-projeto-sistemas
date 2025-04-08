@@ -1,7 +1,7 @@
     @author Luan Gabriel
     @data   08/04/2025
     @aula   05
-> ### Alto-avaliação: *Dev Pleno*
+> ### Alto-avaliação: *Dev*
 
 ---
 
