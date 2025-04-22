@@ -1,0 +1,27 @@
+@startuml
+
+actor Adm as "Administrador"
+actor Operador as "Operador"
+actor Solicitante as "Solicitante"
+
+rectangle "Sistema de Reserva de Materiais" {
+    usecase "Reservar Material" as uc01
+    usecase "Cadastrar solicitante" as uc02
+    usecase "Devolver Material" as uc03
+
+    
+}
+
+Operador --> uc02
+Operador --> uc01
+uc01 --> Solicitante
+uc02 --> Solicitante
+uc03 --> Solicitante
+uc03 --> Operador
+
+
+Adm --|> Operador
+Operador --|> Solicitante
+
+
+@enduml

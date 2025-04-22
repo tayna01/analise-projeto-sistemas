@@ -1,0 +1,64 @@
+@startuml
+skinparam actorPosition top 
+left to right direction 
+
+actor "Cliente" as Cliente
+actor "Administrador" as Administrador
+
+rectangle "Sistema de Reserva de Quadra" {
+  usecase "Consultar calendário" as CU01
+  usecase "Buscar reserva" as CU02
+  usecase "Realizar reserva" as CU03
+  usecase "Verificar disponibilidade" as CU04
+  usecase "Cancelar reserva" as CU05
+  usecase "Gerenciar todas reservas" as CU06
+  usecase "Cadastrar quadra" as CU07
+
+  ' Mais dois casos de uso para o cliente
+  usecase "Avaliar quadra" as CU08 #LightGreen;line:green
+  usecase "Reagendar quadra" as CU09 #LightGreen;line:green
+
+  ' Mais dois casos de uso para o administrador
+  usecase "Gerar relatórios de uso" as CU10 #LightGreen;line:green
+  usecase "Editar informações de quadras" as CU11 #LightGreen;line:green
+
+  ' Casos de uso para o funcionário
+  usecase "Confirmar presença do cliente" as CU12 #LightGreen;line:green
+  usecase "Ajustar horário de reserva" as CU13 #LightGreen;line:green
+
+  CU05 .> CU02 : <<include>>
+  CU03 .> CU04 : <<include>>
+  CU06 .> CU02 : <<include>>
+
+  CU01 .> CU03 : <<extends>>
+  CU01 .> CU02 : <<extends>>
+  CU09 .> CU01 : <<extends>>
+}
+
+Cliente --> CU01
+Cliente --> CU02
+Cliente --> CU03
+Cliente --> CU04
+Cliente --> CU05
+
+Administrador --|> Funcionario
+Administrador --> CU06
+Administrador --> CU07
+
+
+' Mais dois casos de uso para o cliente
+Cliente --> CU08
+Cliente --> CU09
+
+ ' Herança
+Funcionario --|> Cliente
+
+ ' Casos de uso para o funcionário
+Funcionario --> CU12
+Funcionario --> CU13
+
+' Mais dois casos de uso para o administrador
+Administrador --> CU10
+Administrador --> CU11
+
+@enduml
