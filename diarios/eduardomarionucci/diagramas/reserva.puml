@@ -1,0 +1,31 @@
+@startuml
+skinparam actorPosition top 
+left to right direction 
+
+actor "Cliente" as Cliente
+actor "Administrador" as Administrador
+
+rectangle "Sistema de Reserva de Quadra" {
+  usecase "Consultar calendário" as CU01
+  usecase "Buscar reserva" as CU02
+  usecase "Realizar reserva" as CU03
+  usecase "Verificar disponibilidade" as CU04
+  usecase "Cancelar reserva" as CU05
+  usecase "Gerenciar todas reservas" as CU06
+  usecase "Cadastrar quadra" as CU07 
+}
+
+Cliente --> CU01
+Cliente --> CU02
+Cliente --> CU03
+Cliente --> CU04
+Cliente --> CU05
+
+Administrador --> CU01
+Administrador --> CU02
+Administrador --> CU03
+Administrador --> CU04
+Administrador --> CU05
+Administrador --> CU06
+Administrador --> CU07
+@enduml
