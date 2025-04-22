@@ -4,6 +4,7 @@ left to right direction
 
 actor cli as "Cliente"
 actor adm as "Administrador"
+actor fun as "Funcionario"
 
 
 rectangle "Sistema de Reserva de Quadra" {
@@ -14,9 +15,18 @@ rectangle "Sistema de Reserva de Quadra" {
     usecase "Cancelar Reserva" as cu05
     usecase "Gerenciar todas as Reservas" as cu06
     usecase "Cadastrar Quadra" as cu07
+    usecase "Editar Reserva" as cu08
+    usecase "Gerar Relatórios" as cu09
+    usecase "Manutenção de Quadra" as cu10
+    usecase "Receber Notificações" as cu11
+    usecase "Configurar Períodos de Reserva" as cu12
+    usecase "Atender alterações" as cu13
 
+
+    cu06 .> cu05 : <<include>>
     cu03 .> cu04 : <<include>>
-    cu05 <. cu02 : <<extends>> 
+    cu05 <. cu02 : <<extends>>
+    cu08 <. cu02 : <<extends>>
 }
 
 cli --> cu01  
@@ -26,11 +36,20 @@ cli --> cu04
 cli --> cu05
 cli --> cu06
 cli --> cu07
+cli --> cu08
+cli -> cu11
 
 adm --|> cli
 adm --> cu06
 adm --> cu07
+adm --> cu09
+adm --> cu10
+adm --> cu12
 
+fun --|> cli
+fun --> cu06
+fun --> cu08
+fun --> cu13
 
 @enduml
 
