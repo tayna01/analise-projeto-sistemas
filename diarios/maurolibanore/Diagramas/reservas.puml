@@ -1,0 +1,37 @@
+@startuml
+
+left to right direction
+
+actor cli as "Cliente"
+actor adm as "Administrador"
+
+
+rectangle "Sistema de Reserva de Quadra" {
+    usecase "Consultar Calendário" as cu01
+    usecase "Buscar Reserva" as cu02
+    usecase "Realizar Reserva" as cu03
+    usecase "Verificar Disponibilidade" as cu04
+    usecase "Cancelar Reserva" as cu05
+    usecase "Gerenciar todas as Reservas" as cu06
+    usecase "Cadastrar Quadra" as cu07
+
+    cu03 .> cu04 : <<include>>
+    cu05 <. cu02 : <<extends>> 
+}
+
+cli --> cu01  
+cli --> cu02
+cli --> cu03
+cli --> cu04
+cli --> cu05
+cli --> cu06
+cli --> cu07
+
+adm --|> cli
+adm --> cu06
+adm --> cu07
+
+
+@enduml
+
+/'
