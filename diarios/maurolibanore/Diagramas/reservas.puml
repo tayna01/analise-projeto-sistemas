@@ -20,7 +20,7 @@ rectangle "Sistema de Reserva de Quadra" {
     usecase "Manutenção de Quadra" as cu10
     usecase "Receber Notificações" as cu11
     usecase "Configurar Períodos de Reserva" as cu12
-    usecase "Atender alterações" as cu13
+    usecase "Visualizar Historico de Reservas" as cu13
 
 
     cu06 .> cu05 : <<include>>
@@ -29,7 +29,7 @@ rectangle "Sistema de Reserva de Quadra" {
     cu08 <. cu02 : <<extends>>
 }
 
-cli --> cu01  
+cli --> cu01    
 cli --> cu02
 cli --> cu03
 cli --> cu04
