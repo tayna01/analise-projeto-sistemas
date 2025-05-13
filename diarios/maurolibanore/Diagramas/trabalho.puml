@@ -1,0 +1,103 @@
+@startuml
+left to right direction
+
+' Atores
+actor sol as "Solicitante"
+actor op as "Operador"
+actor adm as "Administrador"
+
+' Herança entre atores
+op --|> sol
+adm --|> sol
+adm --|> op
+
+rectangle "Sistema de Empréstimo e Controle de Materiais" {
+
+  ' --- [1] CONTROLE DE ACESSO ---
+  usecase UC01 as "Realizar Login"
+  usecase UC02 as "Validar Login"
+  usecase UC03 as "Diferenciar Perfil de Usuário"
+  usecase UC04 as "Alterar Senha"
+  usecase UC05 as "Exibir Foto de Perfil"
+
+  ' --- [2] GERENCIAMENTO DE MATERIAIS ---
+  usecase UC06 as "Cadastrar Material"
+  usecase UC07 as "Editar/Remover Material"
+  usecase UC08 as "Visualizar Lista de Materiais"
+
+  ' --- [3] CONTROLE DE ESTOQUE ---
+  usecase UC09 as "Registrar Entrada de Material"
+  usecase UC10 as "Registrar Saída de Material"
+  usecase UC11 as "Gerar Histórico de Movimentações"
+
+  ' --- [4] RELATÓRIOS E CONSULTAS ---
+  usecase UC12 as "Gerar Relatório por Período"
+  usecase UC13 as "Consultar por Item"
+  usecase UC14 as "Consultar por RA/CPF"
+  usecase UC15 as "Listar Itens Não Devolvidos"
+
+  ' --- [5] NOTIFICAÇÕES E ALERTAS ---
+  usecase UC16 as "Notificar Validade Próxima/Vencida"
+  usecase UC17 as "Marcar Notificação como Lida"
+  usecase UC18 as "Notificar Novos Materiais"
+  usecase UC19 as "Alerta de Estoque Mínimo"
+
+  ' --- [6] HISTÓRICO DE MOVIMENTAÇÕES ---
+  usecase UC20 as "Visualizar Histórico por Item"
+  usecase UC21 as "Visualizar Histórico por Usuário"
+
+  ' Relacionamentos dos atores com casos de uso
+
+  ' Solicitante
+  sol --> UC01
+  sol --> UC02
+  sol --> UC03
+  sol --> UC04
+  sol --> UC05
+  sol --> UC08
+  sol --> UC10
+  sol --> UC11
+  sol --> UC13
+  sol --> UC14
+  sol --> UC20
+  sol --> UC21
+  sol --> UC17
+  sol --> UC18
+
+  ' Operador
+  op --> UC06
+  op --> UC07
+  op --> UC09
+  op --> UC10
+  op --> UC11
+  op --> UC12
+  op --> UC13
+  op --> UC14
+  op --> UC20
+  op --> UC21
+  op --> UC16
+  op --> UC19
+
+  ' Administrador
+  adm --> UC06
+  adm --> UC07
+  adm --> UC09
+  adm --> UC10
+  adm --> UC11
+  adm --> UC12
+  adm --> UC13
+  adm --> UC14
+  adm --> UC15
+  adm --> UC16
+  adm --> UC17
+  adm --> UC18
+  adm --> UC19
+  adm --> UC20
+  adm --> UC21
+
+  ' Relacionamentos entre casos de uso
+  UC01 --> UC02 : <<include>>
+  UC01 --> UC03 : <<include>>
+}
+
+@enduml
