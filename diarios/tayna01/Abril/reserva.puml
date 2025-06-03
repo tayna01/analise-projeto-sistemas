@@ -1,0 +1,16 @@
+@startuml ReservaDeQuadras
+
+actor cli as "Cliente"
+actor adm as "Administrador"
+
+rectangle "Sistema de Reserva de Quadra" {
+  usecase "Reservar Quadra" as UC1
+  usecase "Cancelar Reserva" as UC2
+  usecase "Gerenciar Quadras" as UC3
+}
+
+cli --> UC1
+cli --> UC2
+adm --> UC3
+
+@enduml
